@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hub Digital - Timeline de Produção 3D</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="timeline-card">
+    <ul class="timeline">
+
+      <!-- Etapa 01: Concluída -->
+      <li class="timeline-item completed">
+        <div class="timeline-marker">
+          <div class="icon-circle check"></div>
+          <div class="timeline-line"></div>
+        </div>
+        <div class="timeline-content">
+          <h3>01. Cadastro da Demanda</h3>
+          <p>Data com 23/06/2024</p>
+        </div>
+      </li>
+
+      <!-- Etapa 02: Concluída -->
+      <li class="timeline-item completed">
+        <div class="timeline-marker">
+          <div class="icon-circle check"></div>
+          <div class="timeline-line"></div>
+        </div>
+        <div class="timeline-content">
+          <h3>02. Match com Parceiro</h3>
+          <p>Laboratório: <strong>MakerStudio SP</strong></p>
+        </div>
+      </li>
+
+      <!-- Etapa 03: Ativa (Em Produção) -->
+      <li class="timeline-item active">
+        <div class="timeline-marker">
+          <div class="icon-circle active-gear"></div>
+          <div class="timeline-line"></div>
+        </div>
+        <div class="timeline-content">
+          <h3>03. Em Produção (Impressão 3D)</h3>
+          <p>Aproximadamente 3h restantes</p>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 60%;"></div>
+          </div>
+        </div>
+      </li>
+
+      <!-- Etapa 04: Pendente -->
+      <li class="timeline-item pending">
+        <div class="timeline-marker">
+          <div class="icon-circle dot"></div>
+          <div class="timeline-line"></div>
+        </div>
+        <div class="timeline-content">
+          <h3>04. Controle de Qualidade &amp; Envio</h3>
+          <p>Aguardando</p>
+        </div>
+      </li>
+
+      <!-- Etapa 05: Pendente (Última) -->
+      <li class="timeline-item pending">
+        <div class="timeline-marker">
+          <div class="icon-circle dot"></div>
+        </div>
+        <div class="timeline-content">
+          <h3>05. Entrega na AACD</h3>
+          <p>Aguardando</p>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+  <script>
+    // Desenho dos ícones SVG
+    const svgCheck = `
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>`;
+
+    const svgGear = `
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="3"></circle>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+      </svg>`;
+
+    const etapas = document.querySelectorAll('.timeline-item');
+    let totalConcluidas = 2; // Inicia com as etapas 01 e 02 marcadas
+
+    function atualizarEtapas() {
+      etapas.forEach((item, index) => {
+        const bolinha = item.querySelector('.icon-circle');
+        const barra = item.querySelector('.progress-fill');
+
+        if (index < totalConcluidas) {
+          // Marca como Concluída (Verde)
+          item.className = 'timeline-item completed';
+          bolinha.className = 'icon-circle check';
+          bolinha.innerHTML = svgCheck;
+          if (barra) barra.style.width = '100%';
+        } else if (index === totalConcluidas) {
+          // Marca como Ativa (Engrenagem Azul)
+          item.className = 'timeline-item active';
+          bolinha.className = 'icon-circle active-gear';
+          bolinha.innerHTML = svgGear;
+          if (barra) barra.style.width = '60%';
+        } else {
+          // Marca como Pendente (Cinza)
+          item.className = 'timeline-item pending';
+          bolinha.className = 'icon-circle dot';
+          bolinha.innerHTML = '';
+          if (barra) barra.style.width = '0%';
+        }
+      });
+    }
+
+    // Adiciona o evento de clique em cada etapa
+    etapas.forEach((item, index) => {
+      item.addEventListener('click', () => {
+        if (index < totalConcluidas) {
+          // Se já estava concluída, desmarca a partir dela
+          totalConcluidas = index;
+        } else {
+          // Se não estava concluída, marca até ela como concluída
+          totalConcluidas = index + 1;
+        }
+        atualizarEtapas();
+      });
+    });
+
+    // Desenha os ícones iniciais ao abrir a página
+    atualizarEtapas();
+  </script>
+
+</body>
+</html>
