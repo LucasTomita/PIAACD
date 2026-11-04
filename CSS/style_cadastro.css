@@ -1,0 +1,102 @@
+:root {
+    --roxo: #8b5cf6;
+    --roxo-escuro: #7c3aed;
+    --verde: #2dd4aa;
+    --marinho: #0f172a;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+    color: var(--marinho);
+
+    /* Centralização com Flexbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#login {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 50px;
+    box-shadow: 1px 1px 10px rgba(139, 92, 246, 0.25);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    min-width: 280px;
+}
+
+#login h1 {
+    color: var(--marinho);
+}
+
+/* Estilos de Ícones e Campos */
+.campo-email, .campo-senha, .campo-nome {
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.icone-email, .icone-senha, .icone-nome {
+    width: 37px;
+    height: 37px;
+    background-color: var(--roxo);
+    border-radius: 20%;
+    object-fit: contain;
+    padding: 5px;
+    flex-shrink: 0;
+}
+
+.campo-email input, .campo-senha input, .campo-nome input {
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    padding: 10px 12px;
+    color: var(--marinho);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.campo-email input.form-control, .campo-senha input.form-control, .campo-nome input.form-control {
+    flex-grow: 1;
+    background-color: transparent;
+}
+
+.campo-email input:focus,
+.campo-senha
+
+.Botao {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    font-family: inherit;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff !important;
+    background-color: #8b5cf6 !important;
+    border: none !important;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.1s;
+}
+
+.Botao:hover {
+    background-color: #7c3aed !important;
+    box-shadow: 0 6px 16px rgba(139, 92, 246, 0.35);
+}
+
+.Botao:active {
+    transform: scale(0.98);
+}
+
+.Botao:focus-visible {
+    outline: 3px solid #2dd4aa;
+    outline-offset: 2px;
+}
