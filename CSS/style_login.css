@@ -1,0 +1,124 @@
+:root {
+    --roxo: #8b5cf6;
+    --roxo-escuro: #7c3aed;
+    --marinho: #0f172a;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { height: 100%; margin: 0; }
+
+body {
+    background-color: #ffffff;
+    font-family: "Inter", Arial, sans-serif;
+    color: var(--marinho);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#login {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 40px;
+    box-shadow: 0 0 12px rgba(139, 92, 246, 0.25);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    min-width: 280px;
+}
+
+#login h1,
+#Cadastrar h1 {
+    margin: 10px 0 28px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--marinho);
+}
+
+.campo-nome,
+.campo-email,
+.campo-senha {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 2px 0 !important;
+    padding: 0 8px !important;
+    background-color: #ffffff !important;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.campo-nome:focus-within,
+.campo-email:focus-within,
+.campo-senha:focus-within {
+    border-color: var(--roxo);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
+
+.icone-nome, .icone-email, .icone-senha {
+    width: 28px;
+    height: 28px;
+    padding: 5px;
+    background-color: var(--roxo);
+    border-radius: 20%;
+    flex-shrink: 0;
+}
+
+.campo-nome input,
+.campo-email input,
+.campo-senha input {
+    flex: 1;
+    min-width: 0;
+    height: auto;
+    padding: 8px 4px 8px 56px !important;   /* recuo do texto, como no print */
+    font-size: 1rem;
+    color: #64748b;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.campo-nome:has(svg) input,
+.campo-email:has(svg) input,
+.campo-senha:has(svg) input {
+    padding-left: 4px !important;
+}
+
+.campo-nome input::placeholder,
+.campo-email input::placeholder,
+.campo-senha input::placeholder {
+    color: #64748b;
+}
+
+.Botao {
+    display: block;
+    width: 100%;
+    margin-top: 0 !important;
+    padding: 14px 0;
+    font-family: inherit;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #ffffff !important;
+    background: var(--roxo) !important;
+    border: none !important;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.Botao:hover { background: var(--roxo-escuro) !important; }
+
+.Botao:focus-visible {
+    outline: 3px solid rgba(139, 92, 246, 0.4);
+    outline-offset: 2px;
+}
+
+@media (max-width: 450px) {
+    #login { border-radius: 20px; padding: 20px; width: 95%; }
+    .Botao { font-size: 1.2rem; }
+    .campo-nome input, .campo-email input, .campo-senha input { font-size: 0.95rem; }
+}
