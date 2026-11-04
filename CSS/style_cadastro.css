@@ -42,8 +42,9 @@ body {
     margin-bottom: 24px;
 }
 
-/* Campos */
-.campo-email, .campo-senha, .campo-nome {
+.campo-nome,
+.campo-email,
+.campo-senha {
     background-color: #fff !important;
     border: 1px solid #e2e8f0;
     border-radius: 10px !important;
@@ -51,15 +52,14 @@ body {
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+.campo-nome:focus-within,
 .campo-email:focus-within,
-.campo-senha:focus-within,
-.campo-nome:focus-within {
+.campo-senha:focus-within {
     border-color: var(--roxo);
     box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
 }
 
-/* Ícones */
-.icone-email, .icone-senha, .icone-nome {
+.icone-nome, .icone-email, .icone-senha {
     width: 32px;
     height: 32px;
     background-color: var(--roxo);
@@ -68,8 +68,9 @@ body {
     flex-shrink: 0;
 }
 
-/* Inputs */
-.campo-email input, .campo-senha input, .campo-nome input {
+.campo-nome input,
+.campo-email input,
+.campo-senha input {
     font-size: 1rem;
     border: none !important;
     outline: none !important;
@@ -81,13 +82,12 @@ body {
     color: var(--marinho);
 }
 
+.campo-nome input::placeholder,
 .campo-email input::placeholder,
-.campo-senha input::placeholder,
-.campo-nome input::placeholder {
+.campo-senha input::placeholder {
     color: #64748b;
 }
 
-/* Botão Cadastrar (vermelho, igual ao print) */
 .Botao {
     display: block;
     width: 100%;
@@ -105,11 +105,7 @@ body {
 }
 
 .Botao:hover {
-    background: #8b5cf6 !important;
-}
-
-.Botao:active {
-    background: #8b5cf6 !important;
+    background: #7c3aed !important;
 }
 
 .Botao:focus-visible {
@@ -117,7 +113,6 @@ body {
     outline-offset: 2px;
 }
 
-/* Media Queries (Responsividade) */
 @media (max-width: 450px) {
     #login {
         border-radius: 20px;
@@ -129,12 +124,55 @@ body {
         font-size: 1.2rem;
     }
 
-    .campo-email input, .campo-senha input, .campo-nome input {
+    .campo-nome input, .campo-email input, .campo-senha input {
         font-size: 0.95rem;
     }
 
-    .icone-email, .icone-senha, .icone-nome {
+    .icone-nome, .icone-email, .icone-senha {
         width: 28px;
         height: 28px;
     }
+}
+
+#Cadastrar {
+    width: 100%;
+}
+
+#login h1,
+#Cadastrar h1 {
+    margin: 10px 0 28px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.campo-nome,
+.campo-email,
+.campo-senha {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 2px 0 !important;
+    padding: 0 8px !important;
+    border-radius: 12px !important;
+}
+
+.icone-nome, .icone-email, .icone-senha {
+    width: 28px;
+    height: 28px;
+    padding: 5px;
+    display: block;
+    align-self: center;
+}
+
+.campo-nome input,
+.campo-email input,
+.campo-senha input {
+    min-width: 0;
+    text-align: left;
+    color: #64748b;
+}
+
+.Botao {
+    margin: 0 !important;
+    border-radius: 8px;
 }

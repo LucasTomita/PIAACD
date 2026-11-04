@@ -52,4 +52,7 @@ form.addEventListener('submit', async (e) => {
     msg.style.color = 'red';
     msg.textContent = '❌ Erro ao conectar com o servidor.';
   }
+  if (email && senha) {
+    window.location.href = "tela_inicio.html";
+  }
 });
