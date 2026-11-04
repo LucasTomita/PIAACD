@@ -5,6 +5,10 @@
     --marinho: #0f172a;
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 html, body {
     height: 100%;
     margin: 0;
@@ -12,7 +16,7 @@ html, body {
 
 body {
     background-color: white;
-    font-family: Arial, sans-serif;
+    font-family: "Inter", Arial, sans-serif;
     color: var(--marinho);
 
     /* Centralização com Flexbox */
@@ -35,68 +39,102 @@ body {
 
 #login h1 {
     color: var(--marinho);
+    margin-bottom: 24px;
 }
 
-/* Estilos de Ícones e Campos */
+/* Campos */
 .campo-email, .campo-senha, .campo-nome {
-    background-color: white;
-    border-radius: 10px;
-    margin-bottom: 15px;
+    background-color: #fff !important;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px !important;
+    padding: 2px 8px !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+.campo-email:focus-within,
+.campo-senha:focus-within,
+.campo-nome:focus-within {
+    border-color: var(--roxo);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
+
+/* Ícones */
 .icone-email, .icone-senha, .icone-nome {
-    width: 37px;
-    height: 37px;
+    width: 32px;
+    height: 32px;
     background-color: var(--roxo);
     border-radius: 20%;
-    object-fit: contain;
-    padding: 5px;
+    padding: 6px;
     flex-shrink: 0;
 }
 
+/* Inputs */
 .campo-email input, .campo-senha input, .campo-nome input {
-    font-size: 1.1rem;
-    border: none;
-    border-radius: 8px;
-    outline: none;
-    padding: 10px 12px;
-    color: var(--marinho);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.campo-email input.form-control, .campo-senha input.form-control, .campo-nome input.form-control {
+    font-size: 1rem;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+    padding: 6px 4px !important;
+    height: auto;
     flex-grow: 1;
-    background-color: transparent;
+    color: var(--marinho);
 }
 
-.campo-email input:focus,
-.campo-senha
+.campo-email input::placeholder,
+.campo-senha input::placeholder,
+.campo-nome input::placeholder {
+    color: #64748b;
+}
 
+/* Botão Cadastrar (vermelho, igual ao print) */
 .Botao {
     display: block;
     width: 100%;
-    padding: 12px 0;
+    padding: 14px 0;
     font-family: inherit;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: bold;
     color: #ffffff !important;
-    background-color: #8b5cf6 !important;
+    background: #8b5cf6 !important;
     border: none !important;
-    border-radius: 10px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.1s;
+    box-shadow: none;
+    transition: background-color 0.2s ease;
 }
 
 .Botao:hover {
-    background-color: #7c3aed !important;
-    box-shadow: 0 6px 16px rgba(139, 92, 246, 0.35);
+    background: #8b5cf6 !important;
 }
 
 .Botao:active {
-    transform: scale(0.98);
+    background: #8b5cf6 !important;
 }
 
 .Botao:focus-visible {
-    outline: 3px solid #2dd4aa;
+    outline: 3px solid rgba(139, 92, 246, 0.4);
     outline-offset: 2px;
+}
+
+/* Media Queries (Responsividade) */
+@media (max-width: 450px) {
+    #login {
+        border-radius: 20px;
+        padding: 20px 20px;
+        width: 95%;
+    }
+
+    .Botao {
+        font-size: 1.2rem;
+    }
+
+    .campo-email input, .campo-senha input, .campo-nome input {
+        font-size: 0.95rem;
+    }
+
+    .icone-email, .icone-senha, .icone-nome {
+        width: 28px;
+        height: 28px;
+    }
 }
