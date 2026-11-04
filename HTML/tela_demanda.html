@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/style_demanda.css" />
+    <title>Cadastrar Demanda</title>
+</head> 
+ <header class="topo">
+    <nav class="menu">
+      <a href="tela_inicio.html">Início</a>
+      <a class="ativo">Cadastrar demanda</a>
+      <a>Cadastrar instituição</a>
+      <a>Painel de demanda</a>
+    </nav>
+  </header>
+ 
+    <form id="formDemanda" class="card">
+ 
+      <div class="grupo">
+        <label for="caso">Identificação do caso</label>
+        <input type="text" id="caso" name="caso" required />
+      </div>
+ 
+      <div class="grupo">
+        <span class="rotulo">Tipo de prótese</span>
+        <div class="opcoes opcoes-chip">
+          <label><input type="radio" name="tipo" value="mao" required /><span>Mão</span></label>
+          <label><input type="radio" name="tipo" value="braco" /><span>Braço</span></label>
+          <label><input type="radio" name="tipo" value="perna" /><span>Perna</span></label>
+          <label><input type="radio" name="tipo" value="pe" /><span>Pé</span></label>
+        </div>
+      </div>
+ 
+      <div class="grupo">
+        <span class="rotulo">Tipo do material</span>
+        <div class="opcoes opcoes-chip">
+          <label><input type="radio" name="material" value="PLA" required /><span>PLA</span></label>
+          <label><input type="radio" name="material" value="PETG" /><span>PETG</span></label>
+          <label><input type="radio" name="material" value="ABS" /><span>ABS</span></label>
+          <label><input type="radio" name="material" value="TPU" /><span>TPU</span></label>
+        </div>
+      </div>
+ 
+      <div class="grupo">
+        <label for="volume">Volume estimado (g)</label>
+        <input type="number" id="volume" name="volume" min="0" />
+      </div>
+ 
+      <div class="grupo">
+        <label for="cidade">Cidade</label>
+        <input type="text" id="cidade" name="cidade" required />
+      </div>
+ 
+      <div class="grupo">
+        <span class="rotulo">Urgência</span>
+        <div class="opcoes opcoes-bloco">
+          <label><input type="radio" name="urgencia" value="baixa" required /><span>Baixa</span></label>
+          <label><input type="radio" name="urgencia" value="media" /><span>Média</span></label>
+          <label><input type="radio" name="urgencia" value="alta" /><span>Alta</span></label>
+        </div>
+      </div>
+ 
+      <button type="submit" class="botao">Publicar demanda</button>
+    </form>
+  </main>
+ 
+</body>
+</html>
+ 
