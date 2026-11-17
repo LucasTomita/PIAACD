@@ -37,11 +37,7 @@ form.addEventListener('submit', async (e) => {
       msg.textContent = 'Login efetuado com sucesso!';
 
       setTimeout(() => {
-        switch (data.role) {
-          default:
-            msg.style.color = 'red';
-            msg.textContent = 'Domínio de e-mail inválido.';
-        }
+        window.location.href = 'tela_inicio.html'; 
       }, 800);
     } else {
       msg.style.color = 'red';
@@ -51,8 +47,5 @@ form.addEventListener('submit', async (e) => {
     console.error('Erro ao conectar com backend:', err);
     msg.style.color = 'red';
     msg.textContent = '❌ Erro ao conectar com o servidor.';
-  }
-  if (email && senha) {
-    window.location.href = "tela_inicio.html";
   }
 });

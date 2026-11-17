@@ -1,10 +1,3 @@
-:root {
-    --roxo: #8b5cf6;
-    --roxo-escuro: #7c3aed;
-    --verde: #2dd4aa;
-    --marinho: #0f172a;
-}
-
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -17,9 +10,8 @@ html, body {
 body {
     background-color: white;
     font-family: "Inter", Arial, sans-serif;
-    color: var(--marinho);
+    color: #0f172a;
 
-    /* Centralização com Flexbox */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,7 +22,7 @@ body {
     background-color: #fff;
     padding: 30px 40px;
     border-radius: 50px;
-    box-shadow: 1px 1px 10px rgba(139, 92, 246, 0.25);
+    box-shadow: 1px 1px 10px #dc354566;
     text-align: center;
     width: 90%;
     max-width: 400px;
@@ -38,7 +30,7 @@ body {
 }
 
 #login h1 {
-    color: var(--marinho);
+    color: #0f172a;
     margin-bottom: 24px;
 }
 
@@ -55,14 +47,14 @@ body {
 .campo-nome:focus-within,
 .campo-email:focus-within,
 .campo-senha:focus-within {
-    border-color: var(--roxo);
-    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+    border-color: #dc3545;
+    box-shadow: 0 0 0 3px #dc354566;
 }
 
 .icone-nome, .icone-email, .icone-senha {
     width: 32px;
     height: 32px;
-    background-color: var(--roxo);
+    background-color: #dc3545;
     border-radius: 20%;
     padding: 6px;
     flex-shrink: 0;
@@ -79,7 +71,7 @@ body {
     padding: 6px 4px !important;
     height: auto;
     flex-grow: 1;
-    color: var(--marinho);
+    color: #0f172a;
 }
 
 .campo-nome input::placeholder,
@@ -96,7 +88,7 @@ body {
     font-size: 1.3rem;
     font-weight: bold;
     color: #ffffff !important;
-    background: #8b5cf6 !important;
+    background: #dc3545 !important;
     border: none !important;
     border-radius: 6px;
     cursor: pointer;
@@ -105,11 +97,11 @@ body {
 }
 
 .Botao:hover {
-    background: #7c3aed !important;
+    background: #bb2d3b !important;
 }
 
 .Botao:focus-visible {
-    outline: 3px solid rgba(139, 92, 246, 0.4);
+    outline: 3px solid #dc354566;
     outline-offset: 2px;
 }
 

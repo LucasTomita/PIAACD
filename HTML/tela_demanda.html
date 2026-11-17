@@ -5,23 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../css/style_demanda.css" />
     <title>Cadastrar Demanda</title>
-</head> 
- <header class="topo">
+</head>
+<body>
+
+  <header class="topo">
     <nav class="menu">
       <a href="tela_inicio.html">Início</a>
-      <a class="ativo">Cadastrar demanda</a>
-      <a>Cadastrar instituição</a>
+      <a href="tela_demanda.html" class="ativo">Cadastrar demanda</a>
+      <a href="tela_cadastro_impressora.html">Cadastrar impressora/instituição</a>
       <a>Painel de demanda</a>
     </nav>
   </header>
- 
+
+  <main class="pagina">
+    <h1>Cadastrar demanda</h1>
+    <p class="subtitulo">
+      Faça seu pedido de prótese 3D e ajude a movimentar a vida de quem precisa.
+    </p>
+
     <form id="formDemanda" class="card">
- 
+
       <div class="grupo">
         <label for="caso">Identificação do caso</label>
         <input type="text" id="caso" name="caso" required />
       </div>
- 
+
       <div class="grupo">
         <span class="rotulo">Tipo de prótese</span>
         <div class="opcoes opcoes-chip">
@@ -31,7 +39,7 @@
           <label><input type="radio" name="tipo" value="pe" /><span>Pé</span></label>
         </div>
       </div>
- 
+
       <div class="grupo">
         <span class="rotulo">Tipo do material</span>
         <div class="opcoes opcoes-chip">
@@ -41,17 +49,17 @@
           <label><input type="radio" name="material" value="TPU" /><span>TPU</span></label>
         </div>
       </div>
- 
+
       <div class="grupo">
         <label for="volume">Volume estimado (g)</label>
         <input type="number" id="volume" name="volume" min="0" />
       </div>
- 
+
       <div class="grupo">
         <label for="cidade">Cidade</label>
         <input type="text" id="cidade" name="cidade" required />
       </div>
- 
+
       <div class="grupo">
         <span class="rotulo">Urgência</span>
         <div class="opcoes opcoes-bloco">
@@ -60,11 +68,16 @@
           <label><input type="radio" name="urgencia" value="alta" /><span>Alta</span></label>
         </div>
       </div>
- 
+
       <button type="submit" class="botao">Publicar demanda</button>
     </form>
   </main>
- 
+
+  <script>
+    document.getElementById("formDemanda").addEventListener("submit", function (e) {
+      e.preventDefault();
+      window.location.href = "tela_inicio.html";
+    });
+  </script>
 </body>
 </html>
- 
