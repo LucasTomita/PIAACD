@@ -168,3 +168,52 @@ body {
     margin: 0 !important;
     border-radius: 8px;
 }
+
+.topo {
+    position: fixed;         
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-start;
+    padding: 12px 32px;
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    z-index: 10;
+}
+
+.menu {
+    display: flex;
+    gap: 8px;
+}
+
+.menu a,
+.menu a:visited {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    color: #475569;
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.menu a:hover {
+    background-color: #f1f5f9;
+    color: #0f172a;
+}
+
+.menu a.ativo,
+.menu a.ativo:visited {
+    background-color: #0f172a;
+    color: #ffffff;
+}
+
+@media (max-width: 700px) {
+    .topo {
+        padding: 12px 16px;
+        overflow-x: auto;
+    }
+
+    .menu { white-space: nowrap; }
+}
