@@ -8,6 +8,8 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/auth', require('./routes/auth'));
+app.use('/demandas', require('./routes/demandas'));
+app.use('/instituicoes', require('./routes/instituicoes'));
 
 mongoose
   .connect(process.env.MONGO_URI)
