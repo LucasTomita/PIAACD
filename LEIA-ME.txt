@@ -1,0 +1,31 @@
+PIAACD - como colocar no seu projeto
+=====================================
+
+PASSO 1 - NOVOS.zip
+  Estes arquivos NAO existem no seu repositorio. Copie as pastas para dentro do projeto
+  (as pastas CSS, HTML, JAVA SCRIPT e backend ja existem: so junte os arquivos nelas).
+
+PASSO 2 - SUBSTITUIR.zip
+  Estes arquivos JA existem. Substitua pelos novos. Mudancas pequenas:
+  - backend/server.js ......... +2 linhas (liga as rotas de demandas e instituicoes)
+  - JAVA SCRIPT/js_login.js ... o fetch estava vazio, agora chama /auth/login
+  - JAVA SCRIPT/js_cadastrar.js + 1 linha (vai para o login depois de cadastrar)
+  - HTML/*.html ............... ligam os scripts novos e o link do Painel
+
+PASSO 3 - arquivo .env
+  Dentro de backend existe um arquivo chamado "env". O nome certo e ".env" (com ponto),
+  senao o servidor nao le o MONGO_URI. Renomeie, ou copie o .env.example (em NOVOS) para .env
+  e ajuste o MONGO_URI e o JWT_SECRET.
+
+PASSO 4 - rodar
+  cd backend
+  npm install
+  npm start        (deve aparecer "MongoDB conectado")
+  Depois abra HTML/tela_cadastro.html no navegador (Live Server serve).
+
+COMO FUNCIONA
+  - Qualquer pessoa cria conta e faz login.
+  - "Cadastrar demanda" publica o pedido no banco.
+  - "Cadastrar impressora/instituicao" registra a instituicao da pessoa logada.
+  - No "Painel de demanda" todos veem os pedidos; quem tem impressora cadastrada ve o botao
+    "Aceitar pedido" (so se a impressora usar o material pedido). O card mostra quem aceitou.
